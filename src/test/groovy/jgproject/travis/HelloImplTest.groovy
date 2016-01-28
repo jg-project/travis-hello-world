@@ -18,6 +18,7 @@ class HelloImplTest extends GroovyTestCase {
 
         assert m1 != null && m1.length() > 0
         assert m2 != null && m2.length() > 0
+
         assert !m1.equals(m2)
     }
 }
