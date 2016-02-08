@@ -17,8 +17,8 @@ public class EquationResolverImpl implements EquationResolver {
                 return new SquareRootResult(x1,x2);
             }
             else {
-                x1 = ((-1) * b + Math.sqrt(d)) / (2 * a);
-                x2 = ((-1) * b - Math.sqrt(d)) / (2 * a);
+                x1 = ((-1) * b - Math.sqrt(d)) / (2 * a);
+                x2 = ((-1) * b + Math.sqrt(d)) / (2 * a);
                 return new SquareRootResult(x1,x2);
             }
         }
