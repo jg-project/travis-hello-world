@@ -7,4 +7,6 @@ public class EquationResolverImpl implements EquationResolver {
     public SquareRootResult resolve(double a, double b, double c) {
         return null;
     }
+
+    //test
 }
