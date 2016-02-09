@@ -10,6 +10,7 @@ public class EquationResolverImpl implements EquationResolver {
         if (d < 0) {
             return null;
         }
+      //some kind of comment
         else {
             if (d == 0) {
                 x1 = ((-1) * b)/2 * a;
