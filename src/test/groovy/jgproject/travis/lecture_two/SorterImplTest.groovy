@@ -92,6 +92,5 @@ class SorterImplTest extends GroovyTestCase {
         sorter.sort(list)
     }
 
-
 }
 */
