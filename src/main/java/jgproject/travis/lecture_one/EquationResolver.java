@@ -12,4 +12,5 @@ public interface EquationResolver {
      * @return null if no roots, otherwise should return result lowest root should be x1, largest - x2.
      */
     SquareRootResult resolve(double a, double b, double c);
+
 }
