@@ -18,7 +18,7 @@ class EquationResolverImplTest extends GroovyTestCase {
         SquareRootResult test1 = equationResolver.resolve(2, 5, -3);
         assert test1 != null;
         assert test1.x1>test1.x2;
-        //
+
     }
 
     void testResolveTwoSameRoots() {
