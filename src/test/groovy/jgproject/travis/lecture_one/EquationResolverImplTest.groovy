@@ -17,8 +17,8 @@ class EquationResolverImplTest extends GroovyTestCase {
     }
 
     void testResolveTwoSameRoots() {
-       // assert equationResolver.resolve(2, 4, 2 ).getX1() == equationResolver.resolve(2, 4, 2 ).getX2();
-        assertEquals(equationResolver.resolve(2, 4, 2 ).getX1(),equationResolver.resolve(2, 4, 2 ).getX2());
+        assertEquals(equationResolver.resolve(2, 4, 2 ).getX1(), equationResolver.resolve(2, 4, 2 ).getX2());
+        assertEquals(equationResolver.resolve(2, 4, 2 ).getX1(), -1);
     }
 
     void testResolveNoRoot() {
