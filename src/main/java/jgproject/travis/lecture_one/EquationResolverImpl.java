@@ -9,7 +9,10 @@ public class EquationResolverImpl implements EquationResolver {
             double D = Math.pow(b, 2) - 4 * a * c;
             if (D < 0) {
                 return null;
-            } else {
+            } else if (D == 0) {
+                double x1 = (-b + Math.sqrt(D)) / (2 * a);
+                return new SquareRootResult(x1, x1);
+            }else{
                 return new SquareRootResult((-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a));
             }
         }else{
