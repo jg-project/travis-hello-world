@@ -12,14 +12,16 @@ class EquationResolverImplTest extends GroovyTestCase {
     }
 
     void testResolveTwoDifferentRoots() {
+        assert new SquareRootResult(-2.0, -1.0) == equationResolver.resolve(2, 6, 4)
 
     }
 
     void testResolveTwoSameRoots() {
+        assert  new SquareRootResult(-1.0, -1.0) == equationResolver.resolve(1, 2, 1)
 
     }
 
     void testResolveNoRoot() {
-        assert null == equationResolver.resolve(10, -4, 4);
+        assert null == equationResolver.resolve(2, 4, 4);
     }
 }
