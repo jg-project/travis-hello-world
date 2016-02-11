@@ -6,6 +6,9 @@ class SorterImplTest extends GroovyTestCase {
 
     static Random rnd = new Random();
 
+    final int[] UNSORTED = [9, 7, 5, 3, 1, 100]
+    final int[] SORTED = [1, 3, 5, 7, 9, 100]
+
     static int[] generateArray(int size) {
         int[] result
         if (size > -1) {
@@ -19,6 +22,27 @@ class SorterImplTest extends GroovyTestCase {
 
     void setUp() {
         sorter = new SorterImpl();
+    }
+
+    void testUtilsHeapSort() {
+        int[] a = new int[UNSORTED.length]
+        System.arraycopy(UNSORTED, 0, a, 0, a.length)
+        Utils.Heap.sort(a);
+        assert SORTED == a
+    }
+
+    void testUtilsMergeSort() {
+        int[] a = new int[UNSORTED.length]
+        System.arraycopy(UNSORTED, 0, a, 0, a.length)
+        Utils.Merge.sort(a);
+        assert SORTED == a
+    }
+
+    void testUtilsBubbleSort() {
+        int[] a = new int[UNSORTED.length]
+        System.arraycopy(UNSORTED, 0, a, 0, a.length)
+        Utils.Bubble.sort(a);
+        assert SORTED == a
     }
 
     void testSortsEmptyArray() {
