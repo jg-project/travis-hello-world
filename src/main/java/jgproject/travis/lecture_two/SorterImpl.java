@@ -5,7 +5,8 @@ import java.util.List;
 public class SorterImpl implements Sorter {
     @Override
     public void sort ( int... youx ) {
-        heap.sort ( youx );
+        Merge.sort ( youx );
+        // heap.sort ( youx );
         //int[] a = youx;
 //        if ( youx != null ) {
 //            int n = youx.length;
