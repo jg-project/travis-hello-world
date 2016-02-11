@@ -21,7 +21,7 @@ public class SorterImpl implements Sorter {
 //            }
 //        }
     }
-
+//
     @Override
     public void sort ( List<Integer> collection ) {
         if ( collection != null ) {

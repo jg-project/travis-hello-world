@@ -28,7 +28,7 @@ public class Merge {
     }
 
     private static void merge ( int low, int middle, int high ) {
-
+//
         // Copy both parts into the helper array
         System.arraycopy ( numbers, low, helper, low, high + 1 - low );
 
