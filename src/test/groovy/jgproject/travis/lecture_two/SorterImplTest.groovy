@@ -31,7 +31,7 @@ class SorterImplTest extends GroovyTestCase {
     }
 
     void testSortsNonEmptyArrays() {
-        (1..1000).each {
+        (1..2).each {
             int[] arr = generateArray(it)
             int[] expectedArr = new int[it]
             System.arraycopy(arr, 0, expectedArr, 0, it)
@@ -83,12 +83,12 @@ class SorterImplTest extends GroovyTestCase {
         }
     }
 
-  /*  void testNullIsProcessedCorrectly() {
+   void testNullIsProcessedCorrectly() {
         int[] arr = null
         ArrayList list = null
         sorter.sort(arr)
         sorter.sort(list)
     }
-*/
+
 
 }
