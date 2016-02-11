@@ -10,6 +10,7 @@ class HelloImplTest extends GroovyTestCase {
 
     void testGetMessage() {
         assert "Hello World!".equals(hello.getMessage())
+
     }
 
     void testGetRandomMessage() {
