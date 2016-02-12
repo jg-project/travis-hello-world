@@ -51,7 +51,6 @@ public class SorterImpl implements Sorter {
 //        }
 //
 //    }
-        //
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1 - i; j++) {
                 swap(array, j , j +1 );
