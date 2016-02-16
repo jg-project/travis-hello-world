@@ -24,5 +24,4 @@ public class EquationResolverImpl implements EquationResolver {
             }
         }
     }
-
 }
