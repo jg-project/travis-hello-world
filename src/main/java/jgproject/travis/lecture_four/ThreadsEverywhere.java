@@ -24,7 +24,7 @@ public class ThreadsEverywhere {
         long delta = (to - from) / threadNumbers;
 
         for (int i = 0; i < threadNumbers; i++) {
-            tasks.add(new Task(from + delta * i, from + delta * (i + 1), factory.getPrimeCruncher()));
+            boolean add = tasks.add ( new Task ( from + delta * i, from + delta * (i + 1), factory.getPrimeCruncher ( ) ) );
         }
         executor.invokeAll(tasks);
     }
@@ -46,7 +46,7 @@ public class ThreadsEverywhere {
         @Override
         public Void call() throws Exception {
             long current = from;
-            while (current < to) {
+            while (current++ < to) {
                 if (primeCruncher.isPrime(current)) {
                     System.out.println(Thread.currentThread().getName() + ":" + current);
                 }
