@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ThreadsEverywhere {
 
@@ -46,7 +47,7 @@ public class ThreadsEverywhere {
         @Override
         public Void call() throws Exception {
             long current = from;
-            while (current < to) {
+            while (current++ < to) {
                 if (primeCruncher.isPrime(current)) {
                     System.out.println(Thread.currentThread().getName() + ":" + current);
                 }
@@ -55,5 +56,13 @@ public class ThreadsEverywhere {
         }
     }
 
+    public static void main(String[] args) throws InterruptedException {
+        int nThreads = Runtime.getRuntime().availableProcessors();
+        ExecutorService executor = Executors.newFixedThreadPool(nThreads);
+        ThreadsEverywhere t = new ThreadsEverywhere(executor,new PrimeCruncherFactoryImp(),nThreads);
+        t.crunchIt(1, 1000000);
+        executor.shutdownNow();
+
+    }
 
 }

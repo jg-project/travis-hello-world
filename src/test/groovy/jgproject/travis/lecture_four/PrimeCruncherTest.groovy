@@ -5,7 +5,7 @@ class PrimeCruncherTest extends GroovyTestCase {
     PrimeCruncher cruncher
 
     void setUp() {
-        cruncher = null // your implementation class should go here.
+        cruncher = new PrimeCruncherImp()
     }
 
 
