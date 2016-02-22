@@ -27,7 +27,7 @@ public class PrimeCrunchFactoryImplTest {
 
     @Test
     public void testCheckCruncher () throws InterruptedException {
-        cruncher.crunchIt ( 100000, 10000000 );
+        cruncher.crunchIt ( 1000, 10000 );
     }
 
 

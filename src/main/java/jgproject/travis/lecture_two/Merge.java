@@ -5,13 +5,14 @@ public class Merge {
     static int[] helper;
     int number;
 
-    public static void sort(int[] values)
+    public static int[] sort( int[] values)
 
     {
         numbers = values;
         int number = values.length;
         helper = new int[number];
         mergesort(0, number - 1);
+        return values;
     }
     private static void mergesort ( int low, int high ) {
         // check if low is smaller then high, if not then the array is sorted

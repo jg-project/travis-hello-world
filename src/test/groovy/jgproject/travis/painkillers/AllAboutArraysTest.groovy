@@ -59,21 +59,41 @@ class AllAboutArraysTest extends GroovyTestCase {
         int[] src = [1, 2, 3, 4, 500]
         int[] dest = new int[4]
         test.copyArrays(src, 2, dest, 0, 3)
-        assert [3,4,500,0] == dest
+        assert [3, 4, 500, 0] == dest
     }
 
     void testReverseArray() {
-        int[] arr = [1,100,15,100500,-30]
+        int[] arr = [1, 100, 15, 100500, -30]
         test.reverseArray(arr)
-        assert [-30,100500,15,100,1] == arr
+        assert [-30, 100500, 15, 100, 1] == arr
     }
 
     void testTranspose() {
+        int[][] input = [
+                [1, 2],
+                [4, 5],
+                [6, 7]
+        ]
+
+        int[][] expected = [
+                [1, 4, 6],
+                [2, 5, 7]
+        ]
+
+
+        def transpose = test.transpose(input)
+        assert expected == transpose
+
 
     }
 
     void testSubarray() {
-
+        int [] src = [-30, 100500, 15, 100, 1]
+        int [] sub = [100500, 15, 100]
+        int to = 3
+        int from = 1
+        int[] res = test.subarray(src, from, to)
+        assert res == sub
     }
 
     void testSort() {
@@ -81,10 +101,16 @@ class AllAboutArraysTest extends GroovyTestCase {
     }
 
     void testFindEntryIndex() {
-
+        int [] arr = [1, 2, 3, 4, 5]
+        int numy = 3;
+        int fon = test.findEntryIndex(arr,4);
+        assert numy == fon;
     }
 
     void testRemoveDuplicates() {
-
+        int [] arr = [1, 2, 3, 3, 5]
+        int [] newa = [1, 2, 3, 5]
+        int[] res = test.removeDuplicates(arr)
+        assert res == newa
     }
 }

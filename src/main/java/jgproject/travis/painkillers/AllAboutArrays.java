@@ -2,7 +2,7 @@ package jgproject.travis.painkillers;
 
 public interface AllAboutArrays {
 
-    int[] createArray(int size);
+    int[] createArray( int size);
 
     void fillWithRandomNumbers(int[] arr);
 
