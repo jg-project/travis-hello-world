@@ -69,22 +69,30 @@ class AllAboutArraysTest extends GroovyTestCase {
     }
 
     void testTranspose() {
+        def int [][] src = [[1, 2, 3],[4, 5, 6]]
+        assert [[1,4],[2,5],[3,6]] == test.transpose(src)
 
     }
 
     void testSubarray() {
-
+        int[] src = [1, 2, 3, 4, 5, 6, 7]
+        assert [1, 2, 3, 4, 5] ==  test.subarray(src, 0, 4)
     }
 
     void testSort() {
+        int [] arr = [10,4,7,2,7,8,9];
+        assert Arrays.sort(arr) == test.sort(arr)
 
     }
 
     void testFindEntryIndex() {
-
+        int [] arr = [10,4,7,2,7,8,9];
+        assert 7 == test.findEntryIndex(arr, 2)
     }
 
     void testRemoveDuplicates() {
+        def int [] arr = [1,1,1,1,1,1,1,2,3]
+        assert [1,2,3] == test.removeDuplicates(arr)
 
     }
 }

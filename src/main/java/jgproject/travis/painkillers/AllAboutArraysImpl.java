@@ -1,7 +1,7 @@
 package jgproject.travis.painkillers;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class AllAboutArraysImpl implements AllAboutArrays {
@@ -112,26 +112,51 @@ public class AllAboutArraysImpl implements AllAboutArrays {
 
     @Override
     public int[][] transpose(int[][] matrix) {
-        return new int[0][];
+
+        int [][] newMatrix = new int [matrix[0].length][matrix.length];
+        for (int i = 0; i < matrix[0].length; i++ ){
+            for (int j = 0; j < matrix.length; j++){
+                newMatrix[i][j] = matrix[j][i];
+            }
+        }
+        return newMatrix;
     }
 
     @Override
     public int[] subarray(int[] src, int from, int to) {
-        return new int[0];
+        int[] arrNew = new int[to-from+1];
+        int tmp = from;
+        for(int i = 0; i <to-from+1; i++, tmp++){
+            arrNew[i] = src[tmp];
+        }
+        return arrNew;
     }
 
     @Override
     public void sort(int[] arr) {
-
+        Arrays.sort(arr);
     }
 
     @Override
     public int findEntryIndex(int[] arr, int whatToFind) {
-        return 0;
+        return arr[whatToFind];
     }
 
     @Override
     public int[] removeDuplicates(int[] arr) {
-        return new int[0];
+
+        HashSet<Integer> hashSet = new HashSet();
+
+        for(int i =0 ; i<arr.length ; i++){
+            hashSet.add(arr[i]);
+        }
+        int [] array = new int[hashSet.size()];
+        int count = 0;
+        for(int a : hashSet){
+            array[count] = a;
+            count++;
+        }
+
+        return array;
     }
 }
