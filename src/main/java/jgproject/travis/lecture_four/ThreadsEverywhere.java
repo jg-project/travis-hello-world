@@ -20,7 +20,7 @@ public class ThreadsEverywhere {
     }
 
     public void crunchIt(long from, long to) throws InterruptedException {
-        Collection<Callable<Void>> tasks = new ArrayList<>();
+        Collection<Callable<Void>> tasks = new ArrayList<Callable<Void>>();
         long delta = (to - from) / threadNumbers;
 
         for (int i = 0; i < threadNumbers; i++) {
@@ -46,7 +46,7 @@ public class ThreadsEverywhere {
         @Override
         public Void call() throws Exception {
             long current = from;
-            while (current < to) {
+            while (current++ < to) {
                 if (primeCruncher.isPrime(current)) {
                     System.out.println(Thread.currentThread().getName() + ":" + current);
                 }
