@@ -70,8 +70,8 @@ class SqlFun extends GroovyTestCase {
 
     void testAuthorsAreCorrectForPublisher3() {
         assert db.rows("""
-select 1 from authors
-""") == [
+          select FIRST_NAME,LAST_NAME from authors a, books b where a.AUTHOR_ID = b.AUTHOR_ID and PUBLISHER_ID = 3
+        """) == [
                 [FIRST_NAME: 'Kreg', LAST_NAME: 'Larson'],
                 [FIRST_NAME: 'Petty', LAST_NAME: 'Smith']
         ]
@@ -79,8 +79,8 @@ select 1 from authors
 
     void testTitlesAreCorrectForAuthor1and2() {
         assert db.rows("""
-select 1 from authors
-""") == [
+          select TITLE from books WHERE AUTHOR_ID IN (1,2)
+        """) == [
                 [TITLE: 'DB magic'],
                 [TITLE: 'Java for genius'],
                 [TITLE: 'IoC for the chosen one'],
