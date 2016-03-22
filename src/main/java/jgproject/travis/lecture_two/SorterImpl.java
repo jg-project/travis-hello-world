@@ -1,10 +1,16 @@
 package jgproject.travis.lecture_two;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class SorterImpl implements Sorter {
     @Override
     public void sort(int... array) {
+        if (array == null){
+            return;
+        }
         int i;
         int temp;
 
@@ -51,13 +57,7 @@ public class SorterImpl implements Sorter {
         }
 
     }
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array.length - 1 - i; j++) {
-//                swap(array, j , j +1 );
-//            }
-//        }
 
-//   }
 
     public static void swap(int [] arr ,  int i, int j) {
 
@@ -72,6 +72,8 @@ public class SorterImpl implements Sorter {
 
     @Override
     public void sort(List<Integer> collection) {
-
+        if (collection != null) {
+            Collections.sort(collection);
+        }
     }
 }
